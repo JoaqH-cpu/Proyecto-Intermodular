@@ -1,0 +1,29 @@
+# Dependencias
+node_modules/
+
+# Variables de entorno (solo se suben los .env.example)
+.env*
+!.env.example
+
+# Builds
+.next/
+.medusa/
+dist/
+build/
+*.tsbuildinfo
+next-env.d.ts
+
+# Fotos de producto subidas al backend en local
+apps/backend/static/
+apps/backend/uploads/
+
+# Tests
+coverage/
+playwright-report/
+test-results/
+
+# Sistema y editores
+.DS_Store
+Thumbs.db
+*.log
+.idea/

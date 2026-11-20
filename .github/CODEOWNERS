@@ -1,0 +1,9 @@
+# Quién revisa qué. GitHub pide su revisión automáticamente en cada pull request.
+*                       @JoaqH-cpu
+/apps/backend/          @JoaqH-cpu
+/packages/commerce/     @JoaqH-cpu @RafeClase @Elliot2901
+/config/store.json      @JoaqH-cpu
+/config/theme.css       @RafeClase
+/apps/panel/            @RafeClase
+/apps/storefront/       @Elliot2901
+/data/imagenes/         @RafeClase

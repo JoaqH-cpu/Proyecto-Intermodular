@@ -13,7 +13,7 @@ Toma como referencia funcional un ecommerce real desarrollado por Ariden Labs pa
 | Persona | GitHub | Parte |
 | --- | --- | --- |
 | Joaq | @JoaqH-cpu | Backend (Medusa), contrato de datos, pago y despliegue |
-| Rafa | @RafeClase | Diseño (identidad, tokens, componentes) y panel del dueño |
+| Rafa | @RateClase | Diseño (identidad, tokens, componentes) y panel del dueño |
 | Elliot | @Elliot2901 | Tienda (frontend) y tests end-to-end |
 
 Profesor responsable: Juan David Gutiérrez Marín.

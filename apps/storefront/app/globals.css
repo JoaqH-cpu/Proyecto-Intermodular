@@ -1,0 +1,22 @@
+/* Estilos globales mínimos. Los tokens vienen de config/theme.css. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+main {
+  padding: var(--space-4);
+}

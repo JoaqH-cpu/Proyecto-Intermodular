@@ -6,7 +6,7 @@ Tienda online de **Ferretería ClavaPalos S.L.** (empresa tipo, datos ficticios)
 
 Toma como referencia funcional un ecommerce real desarrollado por Ariden Labs para una ferretería de la zona. El código de este repo lo escribe el equipo desde cero.
 
-> **Estado:** solo documentación. El código empieza con el ticket T0 (sprint 0, desde el 23 de noviembre).
+> **Estado:** T0 hecho. Las tres apps arrancan con páginas provisionales; el contrato de datos llega con T1.
 
 ## Equipo
 
@@ -18,11 +18,17 @@ Toma como referencia funcional un ecommerce real desarrollado por Ariden Labs pa
 
 Profesor responsable: Juan David Gutiérrez Marín.
 
-## Stack previsto
+## Stack
 
-Monorepo **pnpm** · **Medusa v2** (backend) · **Next.js** con App Router (tienda y panel) · **TypeScript** estricto · **PostgreSQL** y **Redis** en Docker. Versiones exactas: se fijan en T0.
+| Pieza | Versión |
+| --- | --- |
+| Node.js / pnpm | 24 LTS / 12.21.0 |
+| Medusa | 2.23.0 |
+| Next.js / React | 16.4.6 / 19.3.1 |
+| TypeScript / ESLint | 5.9.3 / 9.39.5 |
+| PostgreSQL / Redis | 17 / 7 (Docker) |
 
-Estructura prevista:
+Estructura:
 
 ```
 apps/
@@ -35,6 +41,45 @@ config/         Datos de la tienda y tokens de diseño
 data/           Catálogo de muestra (CSV) e imágenes con créditos
 docs/           Contexto, arquitectura, contrato, tickets, decisiones
 ```
+
+## Arrancar en local
+
+Necesitas **Node.js 24**, **pnpm 12.21.0** (`npm install -g pnpm@12.21.0`) y **Docker Desktop** abierto.
+
+```
+pnpm install
+pnpm db:up
+```
+
+Copia los `.env.example` (en PowerShell, `copy` en vez de `cp`):
+
+```
+cp apps/backend/.env.example apps/backend/.env
+cp apps/storefront/.env.example apps/storefront/.env.local
+cp apps/panel/.env.example apps/panel/.env.local
+```
+
+La primera vez, crea las tablas y un usuario para el admin de Medusa:
+
+```
+pnpm db:migrate
+pnpm user:create -e tu@correo.com -p una-contraseña
+```
+
+Y arranca todo:
+
+```
+pnpm dev
+```
+
+| App | URL |
+| --- | --- |
+| Tienda | http://localhost:3000 |
+| Panel | http://localhost:3001 |
+| Backend (Store/Admin API) | http://localhost:9000 |
+| Admin de Medusa | http://localhost:9000/app |
+
+Antes de abrir un pull request: `pnpm lint`, `pnpm typecheck` y `pnpm build` en verde (la CI hace lo mismo).
 
 ## Empezar
 

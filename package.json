@@ -1,0 +1,22 @@
+{
+  "name": "clavapalos",
+  "private": true,
+  "description": "Tienda online y panel de Ferretería ClavaPalos S.L. (Proyecto Intermodular 2º DAW)",
+  "packageManager": "pnpm@12.21.0",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "dev": "pnpm --parallel --filter \"./apps/*\" dev",
+    "dev:backend": "pnpm --filter @clavapalos/backend dev",
+    "dev:storefront": "pnpm --filter @clavapalos/storefront dev",
+    "dev:panel": "pnpm --filter @clavapalos/panel dev",
+    "build": "pnpm -r build",
+    "lint": "pnpm -r lint",
+    "typecheck": "pnpm -r typecheck",
+    "db:up": "docker compose up -d",
+    "db:down": "docker compose down",
+    "db:migrate": "pnpm --filter @clavapalos/backend medusa db:migrate",
+    "user:create": "pnpm --filter @clavapalos/backend medusa user"
+  }
+}

@@ -24,14 +24,14 @@
 
 ## Versiones
 
-Se fijan en T0 con la última estable de cada una (sin `^`). Referencia a 19 de noviembre de 2026:
+Fijadas en T0 (22 de noviembre de 2026), sin `^`:
 
 | Pieza | Versión |
 | --- | --- |
-| Node.js / pnpm | 24 LTS / 12.6 |
-| Medusa | 2.22 |
-| Next.js / React | 16.4 / 19.3 |
-| TypeScript | 5.9 |
+| Node.js / pnpm | 24 LTS / 12.21.0 |
+| Medusa | 2.23.0 |
+| Next.js / React | 16.4.6 / 19.3.1 |
+| TypeScript | 5.9.3 |
 | PostgreSQL / Redis | 17 / 7 (Docker) |
 
 ## Backend

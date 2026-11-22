@@ -9,3 +9,5 @@ Formato: fecha · decisión · quién. Lo que se decide en `pendientes.md` pasa 
 - 2026-11-19 · Monorepo pnpm con `apps/backend`, `apps/storefront`, `apps/panel` y `packages/commerce` · Joaq
 - 2026-11-20 · El repo arranca solo con documentación; el código se escribe desde cero a partir de T0 · Joaq
 - 2026-11-19 · Flujo de trabajo: issue por ticket, una rama por ticket, pull request con revisión de otro integrante, `main` protegida, CI con lint, typecheck y build · Joaq
+- 2026-11-22 · Versiones fijadas en T0: Node 24, pnpm 12.21.0, Medusa 2.23.0, Next.js 16.4.6, React 19.3.1, TypeScript 5.9.3 (no 7: Medusa sigue en la serie 5/6), ESLint 9.39.5 (el que usa `create-next-app`), PostgreSQL 17 y Redis 7 · Joaq
+- 2026-11-22 · pnpm en monorepo con el hoisting que pide Medusa (`publicHoistPattern` en `pnpm-workspace.yaml`) y scripts de instalación permitidos solo a una lista (`allowBuilds`) · Joaq

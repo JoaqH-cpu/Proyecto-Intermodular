@@ -102,3 +102,11 @@ Antes de abrir un pull request: `pnpm lint`, `pnpm typecheck` y `pnpm build` en 
 | `docs/pendientes.md` | Lo que falta decidir |
 | `CONTRIBUTING.md` | Cómo trabajamos con Git y GitHub |
 | `CLAUDE.md` | Contexto para asistentes de IA |
+
+## Prototipo T5
+
+La tienda incluye una portada, familias, búsqueda, filtros y ficha con un catálogo de ejemplo provisional en `packages/commerce/src/demo-catalog.ts`. Los precios y existencias son de prueba. El catálogo debe sustituirse por el contrato T1 y el adaptador mock T2 cuando estén disponibles; las imágenes, el diseño definitivo y los componentes compartidos dependen de T4, D1, D2 y D3. La cesta y la compra pertenecen a T6. La interfaz muestra un aviso si se selecciona Medusa, cuyo adaptador aún no está implementado.
+
+## Prototipo T6
+
+El carrito y el pago son una simulación local, sin pago ni pedido real. El carrito se guarda en el navegador; los datos del formulario solo permanecen en la página mientras está abierta. El contrato T1, el adaptador mock T2, la tarifa de envío y la integración de pago están pendientes. No introducir datos reales.

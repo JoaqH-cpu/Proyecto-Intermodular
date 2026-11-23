@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import Link from "next/link";
+import { AddToCart } from "./add-to-cart";
 import { getDataSource, getDemoCatalog, storeConfig, type Product } from "@clavapalos/commerce";
 
 type Search = { [key: string]: string | string[] | undefined };
@@ -22,6 +23,7 @@ function ProductCard({ product }: { product: Product }) {
     <p className="price">{price(product.price)} <span>IVA incluido</span></p>
     <p className="availability">{availability(product)}</p>
     {product.pickupOnly && <p>Solo recogida en tienda</p>}
+    <AddToCart id={product.id} available={product.storeStock + product.warehouseStock} />
     <Link className="text-link" href={url("producto", product.id)}>Ver producto <span aria-hidden="true">→</span></Link>
   </article>;
 }
@@ -47,10 +49,10 @@ async function Catalog({ searchParams }: { searchParams: Promise<Search> }) {
     <header className="site-header"><div className="wrap header-inner">
       <Link className="brand" href="/">{storeConfig.name}<span>Ferretería · {storeConfig.locality}</span></Link>
       <form action="/" className="search" role="search"><label className="sr-only" htmlFor="search">Buscar productos</label><input id="search" name="q" defaultValue={query} placeholder="¿Qué estás buscando?" /><button type="submit">Buscar</button></form>
-    </div></header>
+    <Link href="/carrito">Carrito</Link></div></header>
     <div className="demo-notice">Catálogo de ejemplo: precios y disponibilidad de prueba.</div>
     <main className="wrap">
-      {!isMock ? <section><h1>Catálogo no disponible</h1><p>La conexión con el catálogo real todavía está pendiente.</p></section> : productId ? product ? <section className="detail"><div><Link href="/">← Volver al catálogo</Link><div className="detail-image">Sin imagen</div></div><div><p className="muted">{product.family}</p><h1>{product.name}</h1><p className="price detail-price">{price(product.price)} <span>IVA incluido</span></p><p className="availability">{availability(product)}</p><p>En tienda: {product.storeStock} · En almacén: {product.warehouseStock}</p><p>{product.pickupOnly ? "Solo recogida en tienda" : "Recogida en tienda o envío a domicilio"}</p><h2>Descripción</h2><p>{product.description}</p><p className="muted">La compra y el carrito estarán disponibles en una próxima fase.</p></div></section> : <section><h1>Producto no encontrado</h1><Link href="/">Volver al catálogo</Link></section> : <>
+      {!isMock ? <section><h1>Catálogo no disponible</h1><p>La conexión con el catálogo real todavía está pendiente.</p></section> : productId ? product ? <section className="detail"><div><Link href="/">← Volver al catálogo</Link><div className="detail-image">Sin imagen</div></div><div><p className="muted">{product.family}</p><h1>{product.name}</h1><p className="price detail-price">{price(product.price)} <span>IVA incluido</span></p><p className="availability">{availability(product)}</p><p>En tienda: {product.storeStock} · En almacén: {product.warehouseStock}</p><p>{product.pickupOnly ? "Solo recogida en tienda" : "Recogida en tienda o envío a domicilio"}</p><h2>Descripción</h2><p>{product.description}</p><AddToCart id={product.id} available={product.storeStock + product.warehouseStock} /><Link href="/carrito">Ir al carrito</Link></div></section> : <section><h1>Producto no encontrado</h1><Link href="/">Volver al catálogo</Link></section> : <>
       {!isListing && <section className="intro"><p>{storeConfig.locality}</p><h1>Tu ferretería, también online</h1><p>Encuentra herramientas y productos para tus proyectos.</p><a className="button" href="#catalogo">Ver productos</a></section>}
       <section aria-labelledby="families"><h2 id="families">Busca por familia</h2><nav aria-label="Familias de productos" className="families">{families.map((item) => <Link key={item} href={url("familia", item)} aria-current={family === item ? "page" : undefined}>{item} <span aria-hidden="true">→</span></Link>)}</nav></section>
       <section id="catalogo"><div className="section-heading"><div><h2>{family || (query ? `Resultados para «${query}»` : isListing ? "Productos" : "Productos de ejemplo")}</h2><p className="muted">{filtered.length} {filtered.length === 1 ? "producto" : "productos"}</p></div>{isListing && <Link href="/">Ver todo</Link>}</div>
@@ -60,4 +62,5 @@ async function Catalog({ searchParams }: { searchParams: Promise<Search> }) {
     </main><footer><div className="wrap"><strong>{storeConfig.name}</strong><p>{storeConfig.locality}</p><p>Recogida en tienda · Información y horarios pendientes de confirmar.</p></div></footer>
   </>;
 }
+
 

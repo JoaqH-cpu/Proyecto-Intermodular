@@ -43,7 +43,7 @@ Monorepo pnpm:
 - Colores y tipografías solo desde `config/theme.css`.
 
 ## Cómo trabajar
-- Interfaz y documentación en español; código, archivos y commits en inglés (Conventional Commits con ámbito: `feat(storefront): ...`).
+- Interfaz, documentación, comentarios y mensajes de commit en español; nombres del código y de archivos en inglés (Conventional Commits con ámbito: `feat(storefront): añade ...`).
 - Por tickets (`docs/07-tickets.md`), una rama por ticket, pull request a `main`. Nunca push directo a `main`.
 - Al terminar: `pnpm lint` y `pnpm typecheck` en verde, y docs actualizados.
 - Lo no decidido no se inventa: hueco + entrada en `docs/pendientes.md`.

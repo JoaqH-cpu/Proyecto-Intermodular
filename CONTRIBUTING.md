@@ -27,14 +27,14 @@ Formato: `prefijo/t<número>-descripcion-corta`.
 
 ## Commits
 
-Conventional Commits, en inglés, con el ámbito de la app:
+Conventional Commits con el ámbito de la app. El tipo (`feat`, `fix`…) y el ámbito se quedan como están; la descripción va en español, en presente:
 
 ```
-feat(storefront): add product page with availability
-fix(backend): avoid duplicated categories on re-import
-feat(panel): order status buttons
-docs: update contract with cart operations
-chore: bump next to 16.4.7
+feat(storefront): añade la ficha de producto con disponibilidad
+fix(backend): evita categorías duplicadas al reimportar
+feat(panel): botones de estado del pedido
+docs: añade al contrato las operaciones del carrito
+chore: sube next a 16.4.7
 ```
 
 Ámbitos: `backend`, `storefront`, `panel`, `commerce`, `config`, `data`, `ci`.
@@ -56,4 +56,4 @@ chore: bump next to 16.4.7
 
 ## Idioma
 
-Interfaz y documentación en español. Código, nombres de archivo y commits en inglés.
+Interfaz, documentación, comentarios del código y mensajes de commit en español. Nombres del código (tipos, funciones, variables) y de archivos en inglés.

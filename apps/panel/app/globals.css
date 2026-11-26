@@ -1,4 +1,5 @@
-/* Estilos globales mínimos. Los tokens vienen de config/theme.css. */
+/* RESET */
+
 *,
 *::before,
 *::after {
@@ -17,6 +18,245 @@ body {
   outline-offset: 2px;
 }
 
-main {
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+/* HEADER */
+
+.panel-header {
+  background: var(--color-brand);
+  color: var(--color-text-inverse);
   padding: var(--space-4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.panel-header h1 {
+  margin: 0;
+  font-size: var(--font-size-xl);
+}
+
+/* DASHBOARD */
+
+.dashboard {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: var(--space-4);
+}
+
+.dashboard-heading {
+  margin-bottom: var(--space-5);
+}
+
+.dashboard-heading h2 {
+  margin: 0;
+  font-size: var(--font-size-2xl);
+}
+
+.dashboard-heading p {
+  color: var(--color-muted);
+}
+
+/* STAT CARDS */
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(100%, 240px), 1fr)
+  );
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.stat-card,
+.section-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-4);
+}
+
+.stat-card h3 {
+  margin-top: 0;
+  font-size: var(--font-size-base);
+  color: var(--color-muted);
+}
+
+.stat-card strong {
+  font-size: var(--font-size-3xl);
+}
+
+/* SECTIONS */
+
+.section-card {
+  margin-bottom: var(--space-4);
+}
+
+.section-card h2 {
+  margin-top: 0;
+  font-size: var(--font-size-xl);
+}
+
+/* STATUS */
+
+.status-list,
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.status {
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  font-weight: var(--font-weight-semibold);
+}
+
+.status-info {
+  background: var(--color-info-bg);
+  color: var(--color-info);
+}
+
+.status-warning {
+  background: var(--color-warning-bg);
+  color: var(--color-warning);
+}
+
+.status-success {
+  background: var(--color-success-bg);
+  color: var(--color-success);
+}
+
+.status-error {
+  background: var(--color-error-bg);
+  color: var(--color-error);
+}
+
+/* BUTTONS */
+
+.btn-primary,
+.btn-secondary {
+  min-height: var(--tap-target);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius);
+  font-weight: var(--font-weight-semibold);
+  border: 1px solid transparent;
+}
+
+.btn-primary {
+  background: var(--color-accent);
+  color: var(--color-accent-text);
+}
+
+.btn-primary:hover {
+  background: var(--color-accent-hover);
+}
+
+.btn-secondary {
+  background: var(--color-surface);
+  color: var(--color-text);
+  border-color: var(--color-border);
+}
+
+.btn-secondary:hover {
+  background: var(--color-surface-alt);
+}
+
+/* FOOTER */
+
+.panel-footer {
+  color: var(--color-muted);
+  font-size: var(--font-size-sm);
+}
+/* PANEL LAYOUT */
+
+.panel-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.panel-content {
+  flex: 1;
+  min-width: 0;
+}
+
+/* SIDEBAR */
+
+.sidebar {
+  width: 240px;
+  flex-shrink: 0;
+  background: var(--color-brand);
+  color: var(--color-text-inverse);
+  padding: var(--space-4);
+}
+
+.sidebar-brand {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-6);
+}
+
+.sidebar-brand span {
+  color: var(--color-brand-highlight);
+}
+
+/* SIDEBAR NAVIGATION */
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.sidebar nav a {
+  display: flex;
+  align-items: center;
+  min-height: var(--tap-target);
+  padding: var(--space-2) var(--space-3);
+  color: var(--color-text-inverse);
+  text-decoration: none;
+  border-radius: var(--radius);
+  font-weight: var(--font-weight-medium);
+}
+
+.sidebar nav a:hover {
+  background: var(--color-brand-light);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 820px) {
+  .panel-layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+
+  .sidebar-brand {
+    margin-bottom: var(--space-3);
+  }
+
+  .sidebar nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+/* ACTIVE NAVIGATION */
+
+.sidebar nav a.active {
+  background: var(--color-accent);
+  color: var(--color-accent-text);
+  font-weight: var(--font-weight-semibold);
+}
+
+.sidebar nav a.active:hover {
+  background: var(--color-accent-hover);
 }

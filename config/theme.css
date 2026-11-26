@@ -2,21 +2,85 @@
  * Tokens de diseño PROVISIONALES. Los sustituye Rafa en D1 al elegir la dirección visual.
  * Regla: colores, tipografías y espacios solo desde aquí (docs/02-guia-diseno.md).
  */
+/*
+ * ClavaPalos - Design Tokens
+ * D1: Industrial modern - Visual proposal A
+ * ESSSSSSSSSSSSSS PROOOOVISIONAL
+ */
+
 :root {
-  --color-bg: #ffffff;
-  --color-text: #1a1a1a;
+
+  /* BRAND COLORS */
+  --color-brand: #20252b;
+  --color-brand-light: #343a40;
+  --color-brand-highlight: #fb923c;
+
+  /* ACTION COLORS */
+  --color-accent: #c2410c;
+  --color-accent-hover: #9a3412;
+  --color-accent-text: #ffffff;
+
+  /* BACKGROUNDS */
+  --color-bg: #f3f4f6;
+  --color-surface: #ffffff;
+  --color-surface-alt: #e5e7eb;
+
+  /* TEXT */
+  --color-text: #20252b;
   --color-muted: #5c5c5c;
-  --color-accent: #1f4fa8;
+  --color-text-inverse: #ffffff;
+
+  /* STATUS COLORS */
+  --color-success: #166534;
+  --color-success-bg: #dcfce7;
+
+  --color-warning: #92400e;
+  --color-warning-bg: #fef3c7;
+
+  --color-error: #b91c1c;
+  --color-error-bg: #fee2e2;
+
+  --color-info: #1e40af;
+  --color-info-bg: #dbeafe;
+
+  /* BORDERS AND FOCUS */
+  --color-border: #d1d5db;
   --color-focus: #1f4fa8;
 
-  --font-body: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  /* TYPOGRAPHY */
+  --font-body: system-ui, -apple-system,
+    "Segoe UI", Roboto, sans-serif;
 
+  --font-heading: var(--font-body);
+
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.5rem;
+  --font-size-2xl: 2rem;
+  --font-size-3xl: 2.5rem;
+
+  /* FONT WEIGHTS */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* SPACING */
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-3: 1rem;
   --space-4: 1.5rem;
   --space-5: 2rem;
+  --space-6: 3rem;
+  --space-7: 4rem;
 
+  /* BORDER RADIUS */
+  --radius-sm: 0.25rem;
   --radius: 0.5rem;
+  --radius-lg: 0.75rem;
+
+  /* ACCESSIBILITY */
   --tap-target: 48px;
 }

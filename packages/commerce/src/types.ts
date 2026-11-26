@@ -41,3 +41,14 @@ export type Result<T> =
   | { ok: true; data: T}
   | { ok: false; error: CommerceError };
 
+
+  /**
+   * Este tipo se encarga de la disponibilidad de un producto, segun stock.
+   * Reglas escritas en  /docs/06-contrato.md (disponibilidad)
+   */
+
+export type Availability =
+  | "available_today" //mas del umbral en tienda: "Para recoger hoy"
+  | "low_stock" //Stock bajo: "Quedan N para recoger"
+  | "available_soon" //Disponible pronto: 0 en tienda, almacen > 0
+  | "sold_out"; //Sin stock: 0 en tienda y 0 almacen
